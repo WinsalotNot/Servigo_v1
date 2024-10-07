@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Servigo</string>
     <string name="test">test</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="icon_acc">icon of account</string>
+    <string name="island_bar">island bar design</string>
+    <string name="acc_name">Placeholder Placeholder</string>
+    <string name="wallet">This is the wallet</string>
+    <string name="balance">Balance:</string>
+    <string name="test_balance">$250,000.00</string>
 </resources>
