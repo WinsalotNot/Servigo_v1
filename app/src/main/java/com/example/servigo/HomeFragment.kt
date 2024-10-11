@@ -1,19 +1,14 @@
 package com.example.servigo
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.findViewTreeViewModelStoreOwner
-import androidx.navigation.Navigation
-import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayoutMediator
 
 private const val ARG_PARAM1 = "param1"
@@ -23,10 +18,8 @@ class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
-    private lateinit var viewPager2: ViewPager2
     private lateinit var tabLayout: TabLayout
-    private lateinit var adapter: FragmentPageAdapter
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,47 +42,28 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialize views here, not in onCreate
-        viewPager2 = view.findViewById(R.id.viewpager2)
-        tabLayout = view.findViewById(R.id.tabLayout)
+        tabLayout = view.findViewById(R.id.tabLayout1)
 
-        // Set up the adapter
-        adapter = FragmentPageAdapter(childFragmentManager, lifecycle)
-        viewPager2.adapter = adapter
+        // Ensure fragmentContainerView contains a NavHostFragment
+        val navHostFragment = childFragmentManager.findFragmentById(R.id.fragmentContainerView7) as? NavHostFragment
+        navController = navHostFragment?.navController ?: return  // Safely get NavController
 
-        // Add tabs
+        // Add tabs to TabLayout
         tabLayout.addTab(tabLayout.newTab().setText("Service"))
         tabLayout.addTab(tabLayout.newTab().setText("Job"))
 
-        // Link TabLayout and ViewPager2
-        TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
-            tab.text = when (position) {
-                0 -> "Service"
-                1 -> "Job"
-                else -> null
-            }
-        }.attach()
-
-        // Set up Tab selected listener
+        // Set up TabLayout with NavController
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                tab?.let { viewPager2.currentItem = it.position }
+                when (tab?.position) {
+                    0 -> navController.navigate(R.id.serviceListFragment)
+                    1 -> navController.navigate(R.id.jobListFragment)
+                }
             }
 
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-                // Do nothing or implement if necessary
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-                // Do nothing or implement if necessary
-            }
-        })
-
-        // Sync TabLayout with ViewPager2
-        viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                tabLayout.selectTab(tabLayout.getTabAt(position))
-            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
     }
+
 }

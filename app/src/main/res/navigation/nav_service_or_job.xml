@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_service_or_job"
+    app:startDestination="@id/serviceListFragment">
+
+    <fragment
+        android:id="@+id/jobListFragment"
+        android:name="com.example.servigo.JobListFragment"
+        android:label="fragment_job_list"
+        tools:layout="@layout/fragment_job_list" />
+    <fragment
+        android:id="@+id/serviceListFragment"
+        android:name="com.example.servigo.ServiceListFragment"
+        android:label="fragment_service_list"
+        tools:layout="@layout/fragment_service_list" />
+</navigation>
