@@ -36,7 +36,7 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_details, container, false)
+        val view = inflater.inflate(R.layout.fragment_detail, container, false)
         return view
     }
 

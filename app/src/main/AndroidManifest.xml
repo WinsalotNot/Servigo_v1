@@ -13,9 +13,6 @@
         android:theme="@style/Theme.Servigo"
         tools:targetApi="31">
         <activity
-            android:name=".DetailPage"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
