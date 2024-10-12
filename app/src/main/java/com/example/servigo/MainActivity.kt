@@ -1,7 +1,12 @@
 package com.example.servigo
 
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.Window
+import android.view.WindowInsets
+import android.view.WindowInsetsController
 import android.view.WindowManager
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
