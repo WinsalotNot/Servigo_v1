@@ -270,13 +270,6 @@
 
             </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/button_default"
-                tools:layout_editor_absoluteX="125dp"
-                tools:layout_editor_absoluteY="203dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
     <!-- Footer -->
