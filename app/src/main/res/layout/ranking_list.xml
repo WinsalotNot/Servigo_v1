@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="20dp"
+        android:paddingVertical="10dp"
+        android:background="@drawable/rounded_corners"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/R_textName"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Hasanudin Alibama"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/R_textTitle"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dp"
+                android:text="Professional House keeper"
+                android:textColor="#000000"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/R_textDesc"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dp"
+                android:text="@string/aboutMe"
+                android:textColor="#747474"
+                android:textSize="8sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/R_textCat"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center"
+                android:text="S"
+                android:textColor="#FDBF07"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/star" />
+
+                <TextView
+                    android:id="@+id/R_textRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="4.9/5"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/R_textReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="(1500 Reviews)"
+                android:textColor="#000000"
+                android:textSize="8sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

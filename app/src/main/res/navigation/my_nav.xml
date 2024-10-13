@@ -36,4 +36,9 @@
         android:name="com.example.servigo.ProfilePage"
         android:label="fragment_profile_page"
         tools:layout="@layout/fragment_profile_page" />
+    <fragment
+        android:id="@+id/ranking_page"
+        android:name="com.example.servigo.ranking_page"
+        android:label="fragment_ranking_page"
+        tools:layout="@layout/fragment_ranking_page" />
 </navigation>
