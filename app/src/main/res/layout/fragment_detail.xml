@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E8D095"
-    tools:context=".DetailPage">
+    tools:context=".DetailsFragment">
 
     <ScrollView
         android:layout_width="0dp"
@@ -269,7 +269,6 @@
                 </GridLayout>
 
             </RelativeLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
     <!-- Footer -->
