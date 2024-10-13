@@ -19,7 +19,7 @@
         android:id="@+id/detailsFragment2"
         android:name="com.example.servigo.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" >
+        tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/nav_details_to_home"
             app:destination="@id/homeFragment2"
