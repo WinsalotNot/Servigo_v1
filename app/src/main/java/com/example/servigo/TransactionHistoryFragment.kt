@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.servigo.HistoryItem
 
-class TransactionHistory : Fragment() {
+class TransactionHistoryFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
@@ -37,8 +36,8 @@ class TransactionHistory : Fragment() {
 
         // Sample data for RecyclerView (you can replace this with your dynamic data)
         val historyList = listOf(
-            HistoryItem("Hasanudin Alibama", "Professional House Keeper", "Job Description: Clean House", "17/12/24", "Rp.502.500,00", "5/5"),
-            HistoryItem("Jane Doe", "Professional Electrician", "Job Description: Safe Wires", "17/11/24", "Rp.600.500,00", "4.5/5")
+            HistoryItem("Hasanudin Alibama", "Professional House Keeper", "Job Description: Clean House", "17/12/24", "Rp.502.500,00", "5/5", "5/5", "S"),
+            HistoryItem("Jane Doe", "Professional Electrician", "Job Description: Safe Wires", "17/11/24", "Rp.600.500,00", "4.5/5", "3/5", "A")
             // Add more items as needed
         )
 

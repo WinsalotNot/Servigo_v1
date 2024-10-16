@@ -6,6 +6,8 @@ data class HistoryItem(
     val description: String,
     val date: String,
     val price: String,
-    val rating: String
+    val rating: String,
+    val star: String,
+    val rank: String
 )
 

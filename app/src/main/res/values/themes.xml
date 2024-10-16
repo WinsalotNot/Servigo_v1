@@ -3,5 +3,16 @@
     <style name="Base.Theme.Servigo" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
 
+    <!-- styles.xml -->
+    <style name="TextAppearance.App.BottomNavActive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/muted_red</item> <!-- Color for active item -->
+    </style>
+
+    <style name="TextAppearance.App.BottomNavInactive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/gray</item> <!-- Color for inactive item -->
+    </style>
+
     <style name="Theme.Servigo" parent="Base.Theme.Servigo" />
 </resources>
