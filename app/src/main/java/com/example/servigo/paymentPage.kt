@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +37,28 @@ class paymentPage : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_payment_page, container, false)
+    }
+
+    // Set up the RecyclerView after the view is created
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Find the RecyclerView in the inflated view
+        val recyclerView: RecyclerView = view.findViewById(R.id.payment_recyclerView)
+
+        // Set up LayoutManager (LinearLayoutManager for vertical scrolling)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        // Sample data for RecyclerView (you can replace this with your dynamic data)
+        val paymentList = listOf(
+            paymentData("Cleaning Service", "Quantity 1 · 100.000 IDR /hour", "IDR 400,000"),
+            paymentData("Transport", "Quantity 2 · 4km", "IDR 25,000"),
+            paymentData("Admin Fee", "Quantity 3 · 1%", "IDR 4,250")
+            // Add more items as needed
+        )
+
+        // Set up the adapter
+        recyclerView.adapter = PaymentAdapter(paymentList)
     }
 
     companion object {

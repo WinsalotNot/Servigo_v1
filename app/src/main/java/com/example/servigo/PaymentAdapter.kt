@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.servigo.HistoryAdapter.HistoryViewHolder
 
-class PaymentAdapter(private val paymentList : ArrayList<paymentData>) : RecyclerView.Adapter<PaymentAdapter.PaymentViewHolder>() {
+class PaymentAdapter(private val paymentList : List<paymentData>) : RecyclerView.Adapter<PaymentAdapter.PaymentViewHolder>() {
 
     class PaymentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val payitem: TextView = itemView.findViewById(R.id.payItem)
