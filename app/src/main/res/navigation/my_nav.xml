@@ -41,4 +41,9 @@
         android:name="com.example.servigo.ranking_page"
         android:label="fragment_ranking_page"
         tools:layout="@layout/fragment_ranking_page" />
+    <fragment
+        android:id="@+id/paymentPage"
+        android:name="com.example.servigo.paymentPage"
+        android:label="fragment_payment_page"
+        tools:layout="@layout/fragment_payment_page" />
 </navigation>
