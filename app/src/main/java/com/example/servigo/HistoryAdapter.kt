@@ -16,11 +16,13 @@ class HistoryAdapter(private val historyList: List<HistoryItem>) : RecyclerView.
         val dateTextView: TextView = itemView.findViewById(R.id.dateTextView)
         val priceTextView: TextView = itemView.findViewById(R.id.priceTextView)
         val ratingTextView: TextView = itemView.findViewById(R.id.ratingTextView)
+        val starTextView: TextView = itemView.findViewById(R.id.starTextView)
+        val rankTextView: TextView = itemView.findViewById(R.id.rankTextView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.history_item_layout, parent, false)
+            .inflate(R.layout.history_item_design, parent, false)
         return HistoryViewHolder(view)
     }
 
@@ -32,6 +34,8 @@ class HistoryAdapter(private val historyList: List<HistoryItem>) : RecyclerView.
         holder.dateTextView.text = historyItem.date
         holder.priceTextView.text = historyItem.price
         holder.ratingTextView.text = historyItem.rating
+        holder.starTextView.text = historyItem.star
+        holder.rankTextView.text = historyItem.rank
         Log.d("RecyclerView", "Binding item: ${historyItem.name}")  // Debug log
     }
 

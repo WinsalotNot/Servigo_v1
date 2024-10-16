@@ -8,37 +8,25 @@
         android:id="@+id/homeFragment2"
         android:name="com.example.servigo.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/nav_home_to_details"
-            app:destination="@id/detailsFragment2"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@anim/nav_default_pop_exit_anim" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/detailsFragment2"
         android:name="com.example.servigo.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_detail" >
-        <action
-            android:id="@+id/nav_details_to_home"
-            app:destination="@id/homeFragment2"
-            app:enterAnim="@android:anim/slide_out_right"
-            app:exitAnim="@anim/nav_default_pop_exit_anim" />
-    </fragment>
+        tools:layout="@layout/fragment_detail" />
     <fragment
         android:id="@+id/transactionHistory"
-        android:name="com.example.servigo.TransactionHistory"
+        android:name="com.example.servigo.TransactionHistoryFragment"
         android:label="fragment_transaction_history"
         tools:layout="@layout/fragment_transaction_history" />
     <fragment
         android:id="@+id/profilePage"
-        android:name="com.example.servigo.ProfilePage"
+        android:name="com.example.servigo.ProfileFragment"
         android:label="fragment_profile_page"
-        tools:layout="@layout/fragment_profile_page" />
+        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/ranking_page"
-        android:name="com.example.servigo.ranking_page"
+        android:name="com.example.servigo.LeaderboardFragment"
         android:label="fragment_ranking_page"
-        tools:layout="@layout/fragment_ranking_page" />
+        tools:layout="@layout/fragment_leaderboard" />
 </navigation>

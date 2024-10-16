@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,25 +39,23 @@ class ServiceListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_service_list, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ServiceListFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ServiceListFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-        fun newInstance() =
-            JobListFragment()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Find the RecyclerView in the inflated view
+        val recyclerView: RecyclerView = view.findViewById(R.id.service_list)
+
+        // Set up LayoutManager (LinearLayoutManager for vertical scrolling)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        // Sample data for RecyclerView (you can replace this with your dynamic data)
+        val historyList = listOf(
+            HistoryItem("Hasanudin Alibama", "Professional House Keeper", "Job Description: Clean House", "17/12/24", "Rp.502.500,00", "5/5", "5/5", "S"),
+            HistoryItem("Jane Doe", "Professional Electrician", "Job Description: Safe Wires", "17/11/24", "Rp.600.500,00", "4.5/5", "3/5", "A")
+            // Add more items as needed
+        )
+
+        // Set up the adapter
+        recyclerView.adapter = HistoryAdapter(historyList)
     }
 }
